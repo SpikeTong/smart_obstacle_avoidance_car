@@ -53,3 +53,40 @@ dkms.conf
 
 # debug information files
 *.dwo
+# ========== 新增：Keil/STM32 本地无关文件/文件夹 ==========
+# 调试配置文件夹
+DebugConfig/
+# 编译中间文件目录
+Listings/
+Objects/
+# Keil用户界面配置文件（不同用户的个性化配置）
+*.uvgui.*
+# ========== 新增：Keil MDK 特定文件 ==========
+# Keil 项目文件（包含工作区配置，建议保留一个，忽略个性化版本）
+*.uvproj
+*.uvprojx
+*.uvmpw
+# 忽略除特定名称外的所有uvproj文件（如果想保留一个主工程文件，用此规则）
+# !Your_Main_Project.uvproj
+
+# Keil 目标配置和调试会话文件（这些是本地临时文件，必须忽略）
+*.uvopt
+*.uvoptx
+
+# Keil 编译输出文件
+*.build_log.htm
+*.axf
+*.lnp
+*.sct
+*.dep
+
+# J-Link或其他调试工具生成的下载脚本（如有）
+*.jlink
+
+# ========== 新增：系统/IDE临时文件 ==========
+# Windows 缩略图缓存
+Thumbs.db
+# IDE（如VS Code）的本地工作区设置
+.vscode/
+# 文本编辑器的备份文件
+*~
