@@ -1,4 +1,4 @@
-# smart-obstacle-avoidance-car
+<img width="615" height="411" alt="硬件系统架构图" src="https://github.com/user-attachments/assets/efeaa5eb-5175-4641-8e28-a684b618c107" /># smart-obstacle-avoidance-car
 
 An STM32-based IoT patrol car with obstacle avoidance
 
@@ -6,23 +6,40 @@ An STM32-based IoT patrol car with obstacle avoidance
 
 
 
+
 \## 项目概述
 
 本项目实现了一个具备自主避障、环境监测（温湿度、烟雾）和Wi-Fi数据上传功能的智能小车。主控采用STM32F103C8T6，通过云平台实现远程监控。
 
+## 系统架构
+下图展示了本项目的软硬件系统架构与数据流：
+<img width="615" height="411" alt="硬件系统架构图" src="https://github.com/user-attachments/assets/16d50715-fd41-4953-bf0a-a8d70b5f0a1f" />
+<img width="748" height="425" alt="物联网系统框架图" src="https://github.com/user-attachments/assets/d38f7651-e98d-4565-be51-6fb836304b09" />
 
 
-\## 硬件组成
+### 架构说明
+1.  **感知层**：超声波、DHT11、MQ-2传感器负责采集环境数据。
+2.  **控制层**：STM32作为核心，处理传感器数据，执行避障算法，并控制电机与舵机。
+3.  **通信层**：ESP8266模块作为网关，通过MQTT协议将数据上传至OneNET云平台。
+4.  **应用层**：用户可通过云平台 Dashboard 或移动端远程监控实时数据。
 
-\- 主控：STM32F103C8T6
+## 硬件清单 (BOM)
+本项目硬件基于模块化设计，便于组装与调试。主要部件清单如下：
 
-\- 避障：HC-SR04超声波模块 + SG90舵机
+| 类别 | 型号/名称 | 数量 | 关键说明 |
+| :--- | :--- | :--- | :--- |
+| **核心控制** | STM32F103C8T6 (核心板) | 1 | 主控制器，ARM Cortex-M3内核 |
+| **电源系统** | 12V 锂电池组 | 1 | 整车总电源 |
+| | 3.3V/5V 降压稳压模块 | 3 | 分别为MCU、传感器、舵机等供电 |
+| **移动底盘** | 4WD 亚克力智能小车底盘 | 1 | 包含直流电机与车轮 |
+| **运动驱动** | L298N 双H桥电机驱动模块 | 1 | 驱动四个直流电机 |
+| **环境感知** | HC-SR04 超声波传感器 | 1 | 避障测距，检测范围2-400cm |
+| | SG90 舵机 (带云台) | 1 | 摆动超声波传感器以实现多方向探测 |
+| | DHT11 温湿度传感器 | 1 | 监测环境温湿度 |
+| | MQ-2 烟雾传感器 | 1 | 监测可燃气体与烟雾浓度 |
+| **无线通信** | ATK-ESP8266 Wi-Fi模块 | 1 | 通过UART与STM32通信，连接云平台 |
+| **辅助工具** | 400孔面包板、杜邦线 | 若干 | 用于原型搭建与电路测试 |
 
-\- 环境传感器：DHT11（温湿度）、MQ-2（烟雾）
-
-\- 通信：ESP8266 Wi-Fi模块
-
-\- 电机驱动：L298N
 
 
 
