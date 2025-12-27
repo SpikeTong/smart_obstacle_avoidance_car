@@ -90,3 +90,12 @@ Thumbs.db
 .vscode/
 # 文本编辑器的备份文件
 *~
+# 新增：Keil5 MDK 新版用户配置文件（你的电脑刚生成的就是这个）
+*.uvguix.*
+# 新增：Keil调试组件自动生成的SCVD配置文件
+EventRecorderStub.scvd
+# 补充：Keil编译产生的批量临时文件/备份文件
+*.bak
+*.tmp
+# 补充：STM32下载/调试生成的镜像文件（编译产物，无需提交）
+*.bin
