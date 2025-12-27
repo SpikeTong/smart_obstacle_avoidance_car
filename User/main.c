@@ -35,7 +35,7 @@ int main(void)
 	// 传感器模块
 	MQ2_Init();			//传感器初始化
 	// 通信模块
-	Usart1_Init(115200);    // 串口1初始化 (调试/ESP8266)
+	Usart1_Init(115200);    // 串口1初始化 (与ESP8266通信)
 	ESP8266_Init();         // WiFi模块初始化
 	// 执行器模块
 	Humidifier_Init();      // 加湿器初始化 (B11)
