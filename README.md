@@ -4,21 +4,16 @@ An STM32-based IoT patrol car with obstacle avoidance
 
 \# 基于STM32的智能避障巡检小车
 
-
-
-
 \## 项目概述
 
 本项目实现了一个具备自主避障、环境监测（温湿度、烟雾）和Wi-Fi数据上传功能的智能小车。主控采用STM32F103C8T6，通过云平台实现远程监控。
 
 ## 系统架构
-<<<<<<< HEAD
 下图展示了本项目的软硬件系统架构与数据流：
 ![System Architecture Diagram](./docs/system_architecture.png) <!-- 请将你的框架图放至仓库`docs/`目录下并命名为system_architecture.png -->
-=======
+
 下图展示了本项目的系统架构：
 <img width="748" height="425" alt="物联网系统框架图" src="https://github.com/user-attachments/assets/d38f7651-e98d-4565-be51-6fb836304b09" />
->>>>>>> 72c1351f1c224c8d933ce7e5861715d940863ff5
 
 ### 架构说明
 1.  **感知层**：超声波、DHT11、MQ-2传感器负责采集环境数据。
@@ -26,15 +21,12 @@ An STM32-based IoT patrol car with obstacle avoidance
 3.  **通信层**：ESP8266模块作为网关，通过MQTT协议将数据上传至OneNET云平台。
 4.  **应用层**：用户可通过云平台 Dashboard 或移动端远程监控实时数据。
 
-<<<<<<< HEAD
-=======
 ### 架构说明
 1.  **感知层**：超声波、DHT11、MQ-2传感器负责采集环境数据。
 2.  **控制层**：STM32作为核心，处理传感器数据，执行避障算法，并控制电机与舵机。
 3.  **通信层**：ESP8266模块作为网关，通过MQTT协议将数据上传至OneNET云平台。
 4.  **应用层**：用户可通过云平台 Dashboard 或移动端远程监控实时数据。
 <img width="615" height="411" alt="硬件系统架构图" src="https://github.com/user-attachments/assets/16d50715-fd41-4953-bf0a-a8d70b5f0a1f" />
->>>>>>> 72c1351f1c224c8d933ce7e5861715d940863ff5
 ## 硬件清单 (BOM)
 本项目硬件基于模块化设计，便于组装与调试。主要部件清单如下：
 
@@ -51,10 +43,6 @@ An STM32-based IoT patrol car with obstacle avoidance
 | | MQ-2 烟雾传感器 | 1 | 监测可燃气体与烟雾浓度 |
 | **无线通信** | ATK-ESP8266 Wi-Fi模块 | 1 | 通过UART与STM32通信，连接云平台 |
 | **辅助工具** | 400孔面包板、杜邦线 | 若干 | 用于原型搭建与电路测试 |
-<<<<<<< HEAD
-=======
-
->>>>>>> 72c1351f1c224c8d933ce7e5861715d940863ff5
 
 
 
