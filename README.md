@@ -10,7 +10,7 @@ An STM32-based IoT patrol car with obstacle avoidance
 
 ## 系统架构
 下图展示了本项目的软硬件系统架构与数据流：
-![System Architecture Diagram](./docs/system_architecture.png) <!-- 请将你的框架图放至仓库`docs/`目录下并命名为system_architecture.png -->
+(./docs/system_architecture.png) <!-- 请将你的框架图放至仓库`docs/`目录下并命名为system_architecture.png -->
 
 下图展示了本项目的系统架构：
 <img width="748" height="425" alt="物联网系统框架图" src="https://github.com/user-attachments/assets/d38f7651-e98d-4565-be51-6fb836304b09" />
@@ -71,7 +71,7 @@ An STM32-based IoT patrol car with obstacle avoidance
 
 
 \## 功能演示
-
+https://github.com/user-attachments/assets/0edbcd51-bd89-4284-a937-80bb736f58b0
 \- 上电后小车自动前进，实现动态避障。
 
 \- 环境数据实时上传至OneNET云平台。
